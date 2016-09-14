@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.jw.sample.presentation"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:name="com.jw.sample.presentation.App"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.jw.sample.presentation.view.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <receiver android:name="com.jw.sample.presentation.receiver.SensorbergReceiver"
+                  android:process=".sensorberg"
+                  android:exported="false">
+        <intent-filter>
+            <action android:name="com.sensorberg.android.PRESENT_ACTION" />
+        </intent-filter>
+    </receiver>
+    </application>
+
+</manifest>
